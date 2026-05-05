@@ -112,12 +112,38 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 |---|----------|-------------|
 | 01 | [LLM Evaluation](03%20-%20Large%20Language%20Model/08%20-%20LLM%20Eval/01%20-%20LLM%20Evaluation.ipynb) | Perplexity, intrinsic evaluation metrics — measuring how well a model predicts text |
 
+### 04 - Computer Vision
+
+| # | Notebook | Description |
+|---|----------|-------------|
+| 01 | [CNN Foundations](04%20-%20Computer%20Vision/01%20-%20CNN%20Foundations.ipynb) | Convolutions from scratch in NumPy — zero-padding, forward/backward pass, pooling, and gradient derivations |
+| 02 | [CNN Architecture](04%20-%20Computer%20Vision/02%20-%20CNN%20Architecture.ipynb) | Baseline CNN to ResNet on FashionMNIST — vanishing gradients and why skip connections work |
+| 03 | [Transfer Learning](04%20-%20Computer%20Vision/03%20-%20Transfer%20Learning.ipynb) | Feature extraction vs fine-tuning on CIFAR-10 — ImageNet normalization, layer freezing strategies |
+| 04 | [Object Detection](04%20-%20Computer%20Vision/04%20-%20Object%20Detection.ipynb) | IoU, NMS, anchor box assignment, and YOLO output decoding — built from scratch |
+| 05 | [Image Segmentation](04%20-%20Computer%20Vision/05%20-%20Image%20Segmentation.ipynb) | U-Net encoder/decoder from scratch — skip connections, pixel-wise loss, SegFormer inference |
+| 06 | [Metric Learning](04%20-%20Computer%20Vision/06%20-%20Metric%20Learning.ipynb) | Siamese networks, contrastive loss, triplet loss, and FaceNet — embedding spaces for unseen classes |
+| 07 | [Vision Transformers](04%20-%20Computer%20Vision/07%20-%20Vision%20Transformers.ipynb) | ViT, DeiT, and Swin from scratch — patch embedding, multi-head self-attention, hierarchical windows |
+| 08 | [Contrastive Learning](04%20-%20Computer%20Vision/08%20-%20Constrastive%20Learning.ipynb) | SimCLR, CLIP, and DINOv2 — self-supervised pretraining with NT-Xent loss |
+| 09 | [Diffusion Model](04%20-%20Computer%20Vision/09%20-%20Diffusion%20Model.ipynb) | DDPM, DDIM, Stable Diffusion — forward/reverse process, noise schedules, ContextUNet |
+| 10 | [Model Explainability](04%20-%20Computer%20Vision/10%20-%20Model%20Explainability.ipynb) | Saliency maps, GradCAM, Integrated Gradients, and SHAP on ResNet-50 |
+
+### 05 - Multi-Modal
+
+| # | Notebook | Description |
+|---|----------|-------------|
+| 01 | [Bridge Architecture](05%20-%20Multi-Modal/01%20-%20Bridge%20Architecture.ipynb) | Connecting frozen ViT to frozen LLM — LLaVA projectors, Flamingo Perceiver, BLIP-2 Q-Former, MoE bridges |
+| 02 | [Vision Language Model](05%20-%20Multi-Modal/02%20-%20Vision%20Language%20Model.ipynb) | Qwen-VL style VLM from scratch — TinyViT, MLP projector, mRoPE, visual token insertion, Stage 1 training |
+| 03 | [Instruction Tuning](05%20-%20Multi-Modal/03%20-%20Instruction%20Tuning.ipynb) | Stage 2–3 VLM training — visual instructions, multi-turn dialog, RLHF-V for hallucination reduction |
+| 04 | [Reasoning & Inference](05%20-%20Multi-Modal/04%20-%20Reasoning%20%26%20Inference.ipynb) | VLM inference pipeline — decoding strategies, streaming, chain-of-thought, visual grounding, evaluation |
+| 05 | [Audio & Speech](05%20-%20Multi-Modal/05%20-%20Audio%20%26%20Speech.ipynb) | Waveforms to Mel spectrograms from scratch — audio encoders, Whisper, Phi-4 multimodal speech |
+| 06 | [Video](05%20-%20Multi-Modal/06%20-%20Video.ipynb) | Video understanding — spatial-temporal attention, ViViT, dynamic FPS sampling, text-timestamp alignment |
+| 07 | [Visual Agent & Computer Use](05%20-%20Multi-Modal/07%20-%20Visual%20Agent%20and%20Computer%20Use.ipynb) | VLMs that act on GUIs — perception, planning, action loops, computer-use agents |
+| 08 | [Native Multimodal](05%20-%20Multi-Modal/08%20-%20Native%20Multimodal.ipynb) | Any-to-any unified token spaces — Chameleon, Transfusion, Emu3, Janus Pro with VQ-VAE tokenizers |
+
 ### Coming Soon
 
 | Topic | Description |
 |-------|-------------|
-| CNN | Convolutional neural networks — convolution operations, feature maps, pooling, and image recognition from scratch |
-| Multi-Modal | Vision-language models — image encoders, cross-attention fusion, and multimodal understanding |
 | Training Strategy | Training data curation, loss functions, distributed training, and GPU programming |
 | Model Serving | vLLM, PagedAttention, autoscaling, and production deployment |
 | MLOps | Experiment tracking, model versioning, CI/CD for ML, monitoring, and drift detection |
