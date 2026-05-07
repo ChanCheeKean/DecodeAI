@@ -96,9 +96,14 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/01%20-%20LLM_Prompting.ipynb) | Prompt engineering techniques — few-shot, chain-of-thought, structured outputs |
-| 02 | [LangChain](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/02%20-%20Langchain.ipynb) | LangChain fundamentals — data loaders, chains, and database integration |
-| 03 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/03%20-%20Langraph_Agent.ipynb) | Building agents with LangGraph — cyclic state machines, tool calling, RAG agents |
+| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM_Prompting.ipynb) | System prompt design patterns — persona, task-specific, guard-rails, few-shot, chain-of-thought |
+| A02 | [LangChain](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Langchain.ipynb) | LangChain fundamentals — data loaders, splitters, vectorstores, embeddings, retrieval chains |
+| A03 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Harness.ipynb) | The agent loop primitive — tool calling, finish reasons, state management from scratch |
+| A04 | [Agent Gateway](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Agent%20Gateway.ipynb) | Intelligence layers — BASE, IDENTITY, SOUL, MEMORY, SKILLS, TOOLS, CONTEXT, HEARTBEAT |
+| A05 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20Agent%20Operation.ipynb) | Production observability — logs, metrics, traces, cost attribution, latency profiling |
+| A06 | [Self Learning Loop](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A06%20-%20Self%20Learning%20Loop.ipynb) | Reflexion and verbal gradients — self-critique, reflection injection, iterative improvement |
+| B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20Langraph_Agent.ipynb) | Cyclic state graphs with LangGraph — conditional edges, tool routing, RAG agents, LangSmith tracing |
+| B02 | [Claude Code](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Claude%20Code.ipynb) | Reverse-engineering Claude Code's agent loop — stop reasons, tool execution, harness internals |
 
 #### Production & Inference
 
