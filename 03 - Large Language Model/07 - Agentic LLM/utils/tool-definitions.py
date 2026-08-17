@@ -45,12 +45,12 @@ BASH_TOOL = {
         "properties": {
             "command": {
                 "type": "string",
-                "description": "The shell command to execute."
+                "description": "The shell command to execute.",
             },
             "timeout": {
                 "type": "integer",
                 "description": "Timeout in seconds. Default: 30. Use higher for builds.",
-                "default": 30
+                "default": 30,
             },
         },
         "required": ["command"],
@@ -69,15 +69,15 @@ FILE_READ_TOOL = {
         "properties": {
             "file_path": {
                 "type": "string",
-                "description": "Absolute or relative path to the file."
+                "description": "Absolute or relative path to the file.",
             },
             "start_line": {
                 "type": "integer",
-                "description": "First line to read (1-indexed). Omit to start from beginning."
+                "description": "First line to read (1-indexed). Omit to start from beginning.",
             },
             "end_line": {
                 "type": "integer",
-                "description": "Last line to read (inclusive). Omit to read to end."
+                "description": "Last line to read (inclusive). Omit to read to end.",
             },
         },
         "required": ["file_path"],
@@ -96,11 +96,11 @@ FILE_WRITE_TOOL = {
         "properties": {
             "file_path": {
                 "type": "string",
-                "description": "Path to the file to write."
+                "description": "Path to the file to write.",
             },
             "content": {
                 "type": "string",
-                "description": "Complete file content to write."
+                "description": "Complete file content to write.",
             },
         },
         "required": ["file_path", "content"],
@@ -119,18 +119,12 @@ FILE_EDIT_TOOL = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "file_path": {
-                "type": "string",
-                "description": "Path to the file to edit."
-            },
+            "file_path": {"type": "string", "description": "Path to the file to edit."},
             "old_text": {
                 "type": "string",
-                "description": "Exact text to find in the file (must match precisely)."
+                "description": "Exact text to find in the file (must match precisely).",
             },
-            "new_text": {
-                "type": "string",
-                "description": "Replacement text."
-            },
+            "new_text": {"type": "string", "description": "Replacement text."},
         },
         "required": ["file_path", "old_text", "new_text"],
     },
@@ -152,12 +146,12 @@ GLOB_TOOL = {
         "properties": {
             "pattern": {
                 "type": "string",
-                "description": "Glob pattern (e.g. '**/*.py')."
+                "description": "Glob pattern (e.g. '**/*.py').",
             },
             "path": {
                 "type": "string",
                 "description": "Base directory to search from (default: project root).",
-                "default": "."
+                "default": ".",
             },
         },
         "required": ["pattern"],
@@ -176,16 +170,16 @@ GREP_TOOL = {
         "properties": {
             "pattern": {
                 "type": "string",
-                "description": "Regex pattern to search for."
+                "description": "Regex pattern to search for.",
             },
             "path": {
                 "type": "string",
                 "description": "Directory to search in (default: project root).",
-                "default": "."
+                "default": ".",
             },
             "include": {
                 "type": "string",
-                "description": "File glob filter (e.g. '*.py' to only search Python files)."
+                "description": "File glob filter (e.g. '*.py' to only search Python files).",
             },
         },
         "required": ["pattern"],
@@ -203,7 +197,7 @@ TOOL_SEARCH_TOOL = {
         "properties": {
             "query": {
                 "type": "string",
-                "description": "What you're trying to do (e.g. 'search for text in files')."
+                "description": "What you're trying to do (e.g. 'search for text in files').",
             },
         },
         "required": ["query"],
@@ -224,10 +218,7 @@ WEB_FETCH_TOOL = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "url": {
-                "type": "string",
-                "description": "The URL to fetch."
-            },
+            "url": {"type": "string", "description": "The URL to fetch."},
         },
         "required": ["url"],
     },
@@ -242,10 +233,7 @@ WEB_SEARCH_TOOL = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "query": {
-                "type": "string",
-                "description": "Search query."
-            },
+            "query": {"type": "string", "description": "Search query."},
         },
         "required": ["query"],
     },
@@ -269,7 +257,7 @@ AGENT_TOOL = {
         "properties": {
             "task": {
                 "type": "string",
-                "description": "A clear, self-contained task description."
+                "description": "A clear, self-contained task description.",
             },
         },
         "required": ["task"],
@@ -293,20 +281,20 @@ TODO_WRITE_TOOL = {
             "action": {
                 "type": "string",
                 "enum": ["add", "update", "list"],
-                "description": "'add' to create, 'update' to change status, 'list' to show all."
+                "description": "'add' to create, 'update' to change status, 'list' to show all.",
             },
             "description": {
                 "type": "string",
-                "description": "Task description (required for 'add')."
+                "description": "Task description (required for 'add').",
             },
             "todo_id": {
                 "type": "string",
-                "description": "Task ID (required for 'update')."
+                "description": "Task ID (required for 'update').",
             },
             "status": {
                 "type": "string",
                 "enum": ["pending", "in_progress", "done", "blocked"],
-                "description": "New status (required for 'update')."
+                "description": "New status (required for 'update').",
             },
         },
         "required": ["action"],
@@ -340,7 +328,7 @@ SKILL_TOOL = {
         "properties": {
             "skill_name": {
                 "type": "string",
-                "description": "Name of the skill to load (matches SKILL.md filename)."
+                "description": "Name of the skill to load (matches SKILL.md filename).",
             },
         },
         "required": ["skill_name"],
@@ -381,10 +369,7 @@ NOTEBOOK_TOOL = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "code": {
-                "type": "string",
-                "description": "Python code to execute."
-            },
+            "code": {"type": "string", "description": "Python code to execute."},
         },
         "required": ["code"],
     },

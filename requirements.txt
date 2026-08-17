@@ -1,0 +1,50 @@
+# DecodeAI — Python dependencies
+#
+# Tested on: Python 3.12, macOS (Apple Silicon / MPS) and Linux (CUDA).
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Notes
+#   * `librosa` is intentionally NOT included — it pins an old `numba`/`llvmlite`
+#     that fails to build on Python >= 3.10. `torchaudio` + `soundfile` cover
+#     every audio operation used in this repo.
+#   * `decord` is not included either (no Apple Silicon wheels); `av` (PyAV) is
+#     used for video decoding instead.
+
+# ── Core numerics / DL ────────────────────────────────────────────────────
+torch>=2.4
+torchvision>=0.19
+torchaudio>=2.4
+numpy>=1.26
+scipy>=1.11
+
+# ── Hugging Face stack ────────────────────────────────────────────────────
+transformers>=4.45
+datasets>=3.0
+accelerate>=1.0
+peft>=0.13
+huggingface_hub>=0.25
+sentencepiece>=0.2
+protobuf>=4.25
+
+# ── Media I/O ─────────────────────────────────────────────────────────────
+pillow>=10.0
+soundfile>=0.12
+av>=12.0
+
+# ── Classic ML (sections 01–02) ───────────────────────────────────────────
+scikit-learn>=1.4
+pandas>=2.1
+
+# ── Utilities / plotting ──────────────────────────────────────────────────
+matplotlib>=3.8
+seaborn>=0.13
+einops>=0.8
+tqdm>=4.66
+
+# ── Notebook runtime ──────────────────────────────────────────────────────
+jupyter>=1.0
+ipykernel>=6.29
+nbformat>=5.10
+nbclient>=0.10

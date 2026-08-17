@@ -138,7 +138,7 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 |---|----------|-------------|
 | 01 | [Bridge Architecture](05%20-%20Multi-Modal/01%20-%20Bridge%20Architecture.ipynb) | Connecting frozen ViT to frozen LLM — LLaVA projectors, Flamingo Perceiver, BLIP-2 Q-Former, MoE bridges |
 | 02 | [Vision Language Model](05%20-%20Multi-Modal/02%20-%20Vision%20Language%20Model.ipynb) | Qwen-VL style VLM from scratch — TinyViT, MLP projector, mRoPE, visual token insertion, Stage 1 training |
-| 03 | [Instruction Tuning](05%20-%20Multi-Modal/03%20-%20Instruction%20Tuning.ipynb) | Stage 2–3 VLM training — visual instructions, multi-turn dialog, RLHF-V for hallucination reduction |
+| 03 | [Instruction Tuning](05%20-%20Multi-Modal/03%20-%20Instruction%20Tuning.ipynb) | Stage 2 on a pretrained VLM — SmolVLM + ChartQA LoRA SFT, multimodal loss masking, resolution vs. visual token budget, grounding diagnostics |
 | 04 | [Reasoning & Inference](05%20-%20Multi-Modal/04%20-%20Reasoning%20%26%20Inference.ipynb) | VLM inference pipeline — decoding strategies, streaming, chain-of-thought, visual grounding, evaluation |
 | 05 | [Audio & Speech](05%20-%20Multi-Modal/05%20-%20Audio%20%26%20Speech.ipynb) | Waveforms to Mel spectrograms from scratch — audio encoders, Whisper, Phi-4 multimodal speech |
 | 06 | [Video](05%20-%20Multi-Modal/06%20-%20Video.ipynb) | Video understanding — spatial-temporal attention, ViViT, dynamic FPS sampling, text-timestamp alignment |
