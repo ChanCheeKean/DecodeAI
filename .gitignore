@@ -133,3 +133,7 @@ dmypy.json
 /datasets
 /playground
 /82 - Cloud
+
+# Generated artifacts
+.deepeval/
+chroma_db/

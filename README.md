@@ -44,14 +44,14 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 |---|----------|-------------|
 | 01 | [Vanilla RNN](03%20-%20Large%20Language%20Model/01%20-%20RNN/01%20-%20Vanila%20RNN.ipynb) | RNN cell from scratch — hidden states, BPTT, vanishing/exploding gradients |
 | 02 | [Recurrent Classifier](03%20-%20Large%20Language%20Model/01%20-%20RNN/02%20-%20Recurrent%20Classifier.ipynb) | Sentiment classification on IMDb using RNN/LSTM with padding and packing |
-| 03 | [RNN with Attention](03%20-%20Large%20Language%20Model/01%20-%20RNN/03%20-%20RNN%20with%20Attention.ipynb) | Seq2seq bottleneck problem, Bahdanau attention for date format translation |
+| 03 | [RNN with Attention](03%20-%20Large%20Language%20Model/01%20-%20RNN/03%20-%20RNN%20with%20Attention.ipynb) | Seq2seq bottleneck problem, Bahdanau vs Luong attention for date format translation |
 
 #### Transformer Models
 
 | # | Notebook | Description |
 |---|----------|-------------|
 | A01 | [Pretrained Model - HuggingFace](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A01%20-%20Pretrained%20Model%20-%20HuggingFace.ipynb) | Using HuggingFace pipelines and pretrained models for text classification |
-| A02 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A02%20-%20Attention%20Mechanism.ipynb) | Bahdanau vs Luong attention — the information bottleneck and its solution |
+| A02 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A02%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head/MQA/GQA, Flash and sliding-window attention |
 | A03 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A03%20-%20Transformer.ipynb) | Full transformer architecture from scratch — multi-head attention, positional encoding, encoder-decoder |
 | B01 | [BERT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/B01%20-%20BERT.ipynb.ipynb) | Bidirectional encoder — WordPiece tokenization, MLM, NSP, and the fine-tuning paradigm |
 | B02 | [ColBERT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/B02%20-%20Colbert.ipynb) | Late interaction retrieval — MaxSim scoring, query augmentation, token-level matching |
