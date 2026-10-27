@@ -26,9 +26,9 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 04 - Retrieval/04 - NER | [x] | 6.5 min | outputs saved; BERT test F1 0.856 (4k train sentences, 1 epoch), GLiNER zero-shot F1 0.70 on 500 test sentences |
 | 04 - Retrieval/05 - RAG | [x] | 1 min | outputs saved; RAG pipeline, RRF, reranker, RAGAS metrics |
 | 04 - Retrieval/06 - Graph RAG | [x] | 1 min | gpt-5-mini; outputs saved |
-| 05 - Post-Training Alignment/01 - SFT | [ ] |  |  |
-| 05 - Post-Training Alignment/02 - Reward Model | [ ] |  |  |
-| 05 - Post-Training Alignment/03 - DPO vs ORPO and SimPO | [ ] |  |  |
+| 05 - Post-Training Alignment/01 - SFT | [x] | 6 min | outputs saved; fixed pack_examples kwarg, log_level warning; TRL LoRA SFT 10 steps (loss 1.5) + from-scratch collator/trainer |
+| 05 - Post-Training Alignment/02 - Reward Model | [x] | 7 min | outputs saved; ORM ranking acc ~78% on 100 held-out pairs (chance 50%); PRM step labels via MC rollouts + LLM judge |
+| 05 - Post-Training Alignment/03 - DPO vs ORPO and SimPO | [x] | 6.5 min | outputs saved; fixed DEVICE kwarg on helper calls; DPO margin 0→16, ORPO/SimPO one-epoch runs |
 | 05 - Post-Training Alignment/04 - GRPO with RLVR | [ ] |  |  |
 | 05 - Post-Training Alignment/05 - Parameter-Efficient Fine-Tuning (PEFT) | [ ] |  |  |
 | 05 - Post-Training Alignment/06 - Representation Engineering | [ ] |  |  |
@@ -49,7 +49,7 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 08 - Production & Inference/02 - Model Serving | [ ] |  |  |
 | 08 - Production & Inference/03 - Test-Time Compute | [ ] |  |  |
 | 09 - LLM Evaluation/01 - LLM Evaluation | [x] | 1.5 min | outputs saved; judge now gpt-5-mini (local 0.8B could not follow the format), temperature-scaling gradient sign fixed, BERTScore baseline-rescaled at layer 9 |
-| 09 - LLM Evaluation/02 - Agent Evaluation | [~] |  | run stopped after ~35 min (40 tasks x 4 trials x 2 models + tau-bench); key line fix applied, needs full rerun; markdown now number-free, verify its claims (pass^k < pass@1, judge disagreement, perturbation) against fresh output; consider trimming trials |
+| 09 - LLM Evaluation/02 - Agent Evaluation | [x] | 15 min | outputs saved; trials cut 4→3; HumanEval+ pass@1 mini 0.94 / nano 0.71, pass^3 0.90 / 0.45; tau-bench retail 0.70 / 0.50; judge kappa 0.24; markdown claims checked against output |
 | 09 - LLM Evaluation/03 - AI Governance and Security [TODO] | [-] |  | TODO placeholder, skipped |
 
 ---
