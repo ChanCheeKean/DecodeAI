@@ -137,3 +137,4 @@ dmypy.json
 # Generated artifacts
 .deepeval/
 chroma_db/
+03 - Large Language Model/*/data/
