@@ -29,11 +29,11 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 05 - Post-Training Alignment/01 - SFT | [x] | 6 min | outputs saved; fixed pack_examples kwarg, log_level warning; TRL LoRA SFT 10 steps (loss 1.5) + from-scratch collator/trainer |
 | 05 - Post-Training Alignment/02 - Reward Model | [x] | 7 min | outputs saved; ORM ranking acc ~78% on 100 held-out pairs (chance 50%); PRM step labels via MC rollouts + LLM judge |
 | 05 - Post-Training Alignment/03 - DPO vs ORPO and SimPO | [x] | 6.5 min | outputs saved; fixed DEVICE kwarg on helper calls; DPO margin 0→16, ORPO/SimPO one-epoch runs |
-| 05 - Post-Training Alignment/04 - GRPO with RLVR | [ ] |  |  |
+| 05 - Post-Training Alignment/04 - GRPO with RLVR | [x] | 7.5 min | outputs saved; fixed config.batch_num; math reward noisy at 16 steps (markdown says so), tool-calling reward rises 0.3→0.9 |
 | 05 - Post-Training Alignment/05 - Parameter-Efficient Fine-Tuning (PEFT) | [ ] |  |  |
-| 05 - Post-Training Alignment/06 - Representation Engineering | [ ] |  |  |
+| 05 - Post-Training Alignment/06 - Representation Engineering | [x] | 18 min | outputs saved; refusal 97%→6% by ablation, 3% after weight orthogonalisation; TopK SAE recovers 89% of layer loss; slowest cell 6 min |
 | 05 - Post-Training Alignment/07 - Agentic RL [TODO] | [-] |  | TODO placeholder, skipped |
-| 06 - Model Compression/01 - Distillation | [ ] |  |  |
+| 06 - Model Compression/01 - Distillation | [x] | 18 min | outputs saved; teacher 90%, student 10% → SFT 30% / logit KD 15% / rejection-sampling 25% / on-policy 18% / ReDI 12%; teacher-trace cell takes 9 min (near limit) |
 | 06 - Model Compression/02 - Model Pruning | [ ] |  |  |
 | 06 - Model Compression/03 - Quantization | [ ] |  |  |
 | 07 - Agentic LLM/A01 - LLM Prompting | [x] | 7 min | outputs saved; AIME 2025 effort sweep 0%→50%→70%→83%; threads raised to 30 so AIME cell fits in 5 min; structured-output prompt now lists real authors |
