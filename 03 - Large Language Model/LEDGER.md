@@ -34,8 +34,8 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 05 - Post-Training Alignment/06 - Representation Engineering | [x] | 18 min | outputs saved; refusal 97%→6% by ablation, 3% after weight orthogonalisation; TopK SAE recovers 89% of layer loss; slowest cell 6 min |
 | 05 - Post-Training Alignment/07 - Agentic RL [TODO] | [-] |  | TODO placeholder, skipped |
 | 06 - Model Compression/01 - Distillation | [x] | 18 min | outputs saved; teacher 90%, student 10% → SFT 30% / logit KD 15% / rejection-sampling 25% / on-policy 18% / ReDI 12%; teacher-trace cell takes 9 min (near limit) |
-| 06 - Model Compression/02 - Model Pruning | [ ] |  |  |
-| 06 - Model Compression/03 - Quantization | [ ] |  |  |
+| 06 - Model Compression/02 - Model Pruning | [x] | 5 min | outputs saved; SmolLM2-135M dense ppl 24.3; 50% magnitude 2008 vs Wanda 55; activation-aware structured beats L1 structured; iterative 60% ppl 154 vs one-shot 20378 |
+| 06 - Model Compression/03 - Quantization | [x] | 3.5 min | outputs saved; GPT-2 ppl FP32 56.5, 4-bit RTN 66.2 / AWQ 64.1 / GPTQ 60.2, 3-bit RTN 224 vs GPTQ 86; SmoothQuant W8A8 68.8→63.8 |
 | 07 - Agentic LLM/A01 - LLM Prompting | [x] | 7 min | outputs saved; AIME 2025 effort sweep 0%→50%→70%→83%; threads raised to 30 so AIME cell fits in 5 min; structured-output prompt now lists real authors |
 | 07 - Agentic LLM/A02 - Agent Harness | [x] | 1 min | outputs saved; glob demo now lists .ipynb files |
 | 07 - Agentic LLM/A03 - Agent Operation | [x] | 20 s | outputs saved; tracing, budget, prompt-cache stats, model routing, mock vs real agent tests |
@@ -46,7 +46,7 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 07 - Agentic LLM/B03 - Agent Frameworks and Interop Protocols | [x] | 4.6 min | outputs saved; from-scratch vs framework agents on Chinook SQL tasks over MCP |
 | 07 - Agentic LLM/B04 - Deep Research Agent | [x] | 2.4 min | outputs saved; FRAMES: closed-book 62% → search 75% → research loop 75% |
 | 08 - Production & Inference/01 - Generation | [x] | 50 s | outputs saved; fixed batch_num NameError in generate_batch; continuous batching 2.7x over static |
-| 08 - Production & Inference/02 - Model Serving | [ ] |  |  |
+| 08 - Production & Inference/02 - Model Serving | [x] | 3 min | outputs saved; paged KV (1.3% waste vs 86%), radix prefix cache saves 53% prefill, KV quant fp8/int8/KIVI vs naive int4, EAGLE/MTP speculation; vLLM launch cell prints SGLang command (CUDA-only) |
 | 08 - Production & Inference/03 - Test-Time Compute | [ ] |  |  |
 | 09 - LLM Evaluation/01 - LLM Evaluation | [x] | 1.5 min | outputs saved; judge now gpt-5-mini (local 0.8B could not follow the format), temperature-scaling gradient sign fixed, BERTScore baseline-rescaled at layer 9 |
 | 09 - LLM Evaluation/02 - Agent Evaluation | [x] | 15 min | outputs saved; trials cut 4→3; HumanEval+ pass@1 mini 0.94 / nano 0.71, pass^3 0.90 / 0.45; tau-bench retail 0.70 / 0.50; judge kappa 0.24; markdown claims checked against output |
