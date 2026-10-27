@@ -30,7 +30,7 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 05 - Post-Training Alignment/02 - Reward Model | [x] | 7 min | outputs saved; ORM ranking acc ~78% on 100 held-out pairs (chance 50%); PRM step labels via MC rollouts + LLM judge |
 | 05 - Post-Training Alignment/03 - DPO vs ORPO and SimPO | [x] | 6.5 min | outputs saved; fixed DEVICE kwarg on helper calls; DPO margin 0→16, ORPO/SimPO one-epoch runs |
 | 05 - Post-Training Alignment/04 - GRPO with RLVR | [x] | 7.5 min | outputs saved; fixed config.batch_num; math reward noisy at 16 steps (markdown says so), tool-calling reward rises 0.3→0.9 |
-| 05 - Post-Training Alignment/05 - Parameter-Efficient Fine-Tuning (PEFT) | [ ] |  |  |
+| 05 - Post-Training Alignment/05 - Parameter-Efficient Fine-Tuning (PEFT) | [x] | 6.5 min | outputs saved; LoRA 0.11% trainable (541k of 494M) on Dolly 60 steps; repetition_penalty added so greedy output does not loop |
 | 05 - Post-Training Alignment/06 - Representation Engineering | [x] | 18 min | outputs saved; refusal 97%→6% by ablation, 3% after weight orthogonalisation; TopK SAE recovers 89% of layer loss; slowest cell 6 min |
 | 05 - Post-Training Alignment/07 - Agentic RL [TODO] | [-] |  | TODO placeholder, skipped |
 | 06 - Model Compression/01 - Distillation | [x] | 18 min | outputs saved; teacher 90%, student 10% → SFT 30% / logit KD 15% / rejection-sampling 25% / on-policy 18% / ReDI 12%; teacher-trace cell takes 9 min (near limit) |
@@ -47,25 +47,19 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 07 - Agentic LLM/B04 - Deep Research Agent | [x] | 2.4 min | outputs saved; FRAMES: closed-book 62% → search 75% → research loop 75% |
 | 08 - Production & Inference/01 - Generation | [x] | 50 s | outputs saved; fixed batch_num NameError in generate_batch; continuous batching 2.7x over static |
 | 08 - Production & Inference/02 - Model Serving | [x] | 3 min | outputs saved; paged KV (1.3% waste vs 86%), radix prefix cache saves 53% prefill, KV quant fp8/int8/KIVI vs naive int4, EAGLE/MTP speculation; vLLM launch cell prints SGLang command (CUDA-only) |
-| 08 - Production & Inference/03 - Test-Time Compute | [ ] |  |  |
+| 08 - Production & Inference/03 - Test-Time Compute | [x] | 22 min | outputs saved; 14 GSM8K problems; thinking on/off 93% (169 vs 709 tokens), budget 128→512 86%→93%; sampling/revision saturate at 100% on this slice (markdown says so); first run hung/slow at 16 problems so trimmed |
 | 09 - LLM Evaluation/01 - LLM Evaluation | [x] | 1.5 min | outputs saved; judge now gpt-5-mini (local 0.8B could not follow the format), temperature-scaling gradient sign fixed, BERTScore baseline-rescaled at layer 9 |
 | 09 - LLM Evaluation/02 - Agent Evaluation | [x] | 15 min | outputs saved; trials cut 4→3; HumanEval+ pass@1 mini 0.94 / nano 0.71, pass^3 0.90 / 0.45; tau-bench retail 0.70 / 0.50; judge kappa 0.24; markdown claims checked against output |
 | 09 - LLM Evaluation/03 - AI Governance and Security [TODO] | [-] |  | TODO placeholder, skipped |
 
 ---
 
-## Handoff (2026-10-27)
+## Handoff (2026-10-27, end of rerun sweep)
 
-**State:** 24 of 44 notebooks run clean with outputs saved, 1 need CUDA (Colab), 2 are TODO placeholders (skipped), 2 need a fix + rerun, 15 not run yet. All runs are stopped; nothing is mid-flight.
+**State:** every runnable chapter-03 notebook has been rerun with fresh outputs, markdown cleaned and pushed. Only `02 - Training Strategy/02 - Distributed Training` is left: it needs CUDA (warp occupancy, torch.profiler, memory profiling, Triton) and must be run in Colab. The two `[TODO]` placeholders are skipped.
 
-**Needs fix + rerun:** 03 - Transformer Models/C02 - LLaMA, 09 - LLM Evaluation/02 - Agent Evaluation.
-**CUDA / Colab:** 02 - Training Strategy/02 - Distributed Training.
-**Not run yet (suggested order):** 04 - Retrieval/01 - Text Embedding, 04 - Retrieval/04 - NER, 05 - Post-Training Alignment/01 - SFT, 05 - Post-Training Alignment/02 - Reward Model, 05 - Post-Training Alignment/03 - DPO vs ORPO and SimPO, 05 - Post-Training Alignment/04 - GRPO with RLVR, 05 - Post-Training Alignment/05 - Parameter-Efficient Fine-Tuning (PEFT), 05 - Post-Training Alignment/06 - Representation Engineering, 06 - Model Compression/01 - Distillation, 06 - Model Compression/02 - Model Pruning, 06 - Model Compression/03 - Quantization, 08 - Production & Inference/01 - Generation, 08 - Production & Inference/02 - Model Serving, 08 - Production & Inference/03 - Test-Time Compute, 09 - LLM Evaluation/01 - LLM Evaluation.
+**Run-time notes:** slowest notebooks are Test-Time Compute (22 min), Representation Engineering (18 min), Distillation (18 min) and Agent Evaluation (15 min); each cell is under 10 min. Distillation's teacher-trace cell (9 min) and Test-Time Compute's thinking cell (7.7 min) are the closest to the cell limit.
 
-**Lanes (owner's rule):** API-bound or low-memory notebooks, and notebooks that train their own small from-scratch model, may run up to 3 at a time; anything loading or fine-tuning a Hugging Face checkpoint runs one at a time (single 16 GB Apple GPU; parallel GPU runs caused timeouts on 2026-10-27). 10 min max per cell, 30 min max per notebook.
+**Known spec gaps (not rewritten):** several older notebooks (Text Embedding, LLM Evaluation, Generation, Quantization) still use toy or hand-written data in places and `print("=" * 60)` banners; return type hints and docstrings are incomplete on some helpers; code cells over 60 lines exist; some string lines exceed 88 columns.
 
-**Runner (local, gitignored, in `data/run03/`):** `run.py "<nb path>"` executes a notebook in its folder, injects `OPENAI_API_KEY` / `SERPER_API_KEY` from `.env` in memory only, strips bad outputs, writes `out/` + `logs/`. `promote.py out/<tag>.ipynb` copies outputs into the repo notebook if the code cells match (markdown is taken from the repo copy). `ledger.py`, `cleanup.py`, `check.py` (spec check), `mdscan*.py`, `quotescan*.py`, `abbr.py` are helpers. `.git/hooks/pre-commit` runs `cleanup.py` on staged notebooks.
-
-**Known gotchas:** the earlier naming sweep renamed real library keywords and function parameters (`batch_num=` for `batch_size=`, a `DEVICE` parameter on helper functions) so unrun notebooks may hide the same bug; run each and read the errors. Run in-repo residue (`.logs`, `.sessions`, `skills/`, plots, `hello.py`) is created in the notebook folder and must be deleted after a run. Downloaded data (`03 - Transformer Models/datasets/`, `data/tinyshakespeare/`) is intentionally not committed.
-
-**Still open from the owner's checklist:** return type hints on about 400 functions and docstrings on about 200; about 200 code cells over 60 lines need a markdown cell before them; about 370 string/docstring lines over 88 columns; `C02 - LLaMA` still uses `n_layers` / `n_heads` config keys; Agent Evaluation markdown claims need checking against a fresh run.
+**Gotchas:** helper-function parameters renamed in the earlier naming sweep (`DEVICE`, `batch_num`, `seq_len`) caused kwarg mismatches in C02, SFT, DPO, GRPO and Generation; fixed. SFT and PEFT write `data/` next to the notebook (now gitignored). Runner and helpers live in `data/run03/` (gitignored).
