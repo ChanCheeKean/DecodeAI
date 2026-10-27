@@ -17,13 +17,13 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 03 - Transformer Models/B01 - BERT | [x] | 5 min | outputs saved; MLM loss 10.3→7.05 in 3 epochs, NSP stays ~50% at this scale |
 | 03 - Transformer Models/B02 - ColBERT | [x] | 3.7 min | outputs saved; SciFact nDCG@10 0.646 exact, 0.636 with 2-bit residual index (7.5x smaller) |
 | 03 - Transformer Models/C01 - GPT | [x] | 8 min | outputs saved; nanoGPT on tinyshakespeare + looped transformer (loss→0.001, accuracy grows with loop count); fixed n_head config |
-| 03 - Transformer Models/C02 - LLaMA | [~] |  | NEEDS FIX: KVCache.__init__() got unexpected kwarg 'device' (class param renamed to DEVICE; update call sites), then rerun. DEVICE constant already added to cell 0 |
+| 03 - Transformer Models/C02 - LLaMA | [x] | 11 s | outputs saved; fixed KVCache DEVICE kwarg and config keys (num_layers/num_heads/num_kv_heads); KV-cache vs full forward max diff 4e-6 |
 | 03 - Transformer Models/C03 - DeepSeek | [x] | 13 s | outputs saved; fixed RoPE helper device parameter |
 | 03 - Transformer Models/C04 - Qwen | [x] | 1 min | outputs saved; Qwen3.5-0.8B-Base hybrid layers verified against reference (max diff 0) |
-| 04 - Retrieval/01 - Text Embedding | [ ] |  |  |
+| 04 - Retrieval/01 - Text Embedding | [x] | 15 s | outputs saved; BiEncoder MNRL training margin 0.03→0.14 over 5 epochs; Matryoshka loss per dimension |
 | 04 - Retrieval/02 - HNSW | [x] | 5.4 min | outputs saved; HNSW recall@10 0.99+ at ef=64; PQ 32x, IVF-PQ 24x compression; fixed encode batch_size |
 | 04 - Retrieval/03 - Topic Modeling | [x] | 7 min | outputs saved; 66 topics on 18k newsgroup docs, LLM labels via gpt-5-mini |
-| 04 - Retrieval/04 - NER | [ ] |  |  |
+| 04 - Retrieval/04 - NER | [x] | 6.5 min | outputs saved; BERT test F1 0.856 (4k train sentences, 1 epoch), GLiNER zero-shot F1 0.70 on 500 test sentences |
 | 04 - Retrieval/05 - RAG | [x] | 1 min | outputs saved; RAG pipeline, RRF, reranker, RAGAS metrics |
 | 04 - Retrieval/06 - Graph RAG | [x] | 1 min | gpt-5-mini; outputs saved |
 | 05 - Post-Training Alignment/01 - SFT | [ ] |  |  |
@@ -45,10 +45,10 @@ Outputs staged in `data/run03/out/`, logs in `data/run03/logs/`; promoted into t
 | 07 - Agentic LLM/B02 - Code Agent | [x] | 1 min | outputs saved; KG audit finds SQL injection + mutual recursion in /tmp repo |
 | 07 - Agentic LLM/B03 - Agent Frameworks and Interop Protocols | [x] | 4.6 min | outputs saved; from-scratch vs framework agents on Chinook SQL tasks over MCP |
 | 07 - Agentic LLM/B04 - Deep Research Agent | [x] | 2.4 min | outputs saved; FRAMES: closed-book 62% → search 75% → research loop 75% |
-| 08 - Production & Inference/01 - Generation | [ ] |  |  |
+| 08 - Production & Inference/01 - Generation | [x] | 50 s | outputs saved; fixed batch_num NameError in generate_batch; continuous batching 2.7x over static |
 | 08 - Production & Inference/02 - Model Serving | [ ] |  |  |
 | 08 - Production & Inference/03 - Test-Time Compute | [ ] |  |  |
-| 09 - LLM Evaluation/01 - LLM Evaluation | [ ] |  |  |
+| 09 - LLM Evaluation/01 - LLM Evaluation | [x] | 1.5 min | outputs saved; judge now gpt-5-mini (local 0.8B could not follow the format), temperature-scaling gradient sign fixed, BERTScore baseline-rescaled at layer 9 |
 | 09 - LLM Evaluation/02 - Agent Evaluation | [~] |  | run stopped after ~35 min (40 tasks x 4 trials x 2 models + tau-bench); key line fix applied, needs full rerun; markdown now number-free, verify its claims (pass^k < pass@1, judge disagreement, perturbation) against fresh output; consider trimming trials |
 | 09 - LLM Evaluation/03 - AI Governance and Security [TODO] | [-] |  | TODO placeholder, skipped |
 
