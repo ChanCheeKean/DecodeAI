@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(.venv/bin/python \"/private/tmp/claude-501/-Users-kean-Dev-DecodeAI/4132850c-419c-4258-a8a5-0886d99336a1/scratchpad/run_nb.py\")",
+      "Bash(kill 164 170 99243 99275)",
+      "Bash(grep -o '\"[^\"]*Section[^\"]*\"\\\\|\"#\\\\{1,4\\\\}[^\"]*\"')"
+    ]
+  }
+}
