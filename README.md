@@ -57,14 +57,14 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/A01%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head attention, Flash and sliding-window/sparse attention |
-| A02 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/A02%20-%20Transformer.ipynb) | Full transformer architecture from scratch — masking, positional encoding, multi-head attention, encoder-decoder |
-| B01 | [BERT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/B01%20-%20BERT.ipynb) | Bidirectional encoder — WordPiece tokenization, MLM, NSP, and the fine-tuning paradigm |
-| B02 | [ColBERT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/B02%20-%20ColBERT.ipynb) | Late interaction retrieval — MaxSim scoring, query augmentation, token-level matching |
-| C01 | [GPT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C01%20-%20GPT.ipynb) | GPT-2 from scratch — byte-level BPE tokenization, causal self-attention, autoregressive decoding, looped transformers |
-| C02 | [LLaMA](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C02%20-%20LLaMA.ipynb) | LLaMA architecture deep dive — RMSNorm, RoPE, SwiGLU, grouped-query attention |
-| C03 | [DeepSeek](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C03%20-%20DeepSeek.ipynb) | Multi-head Latent Attention (MLA), fine-grained MoE with shared experts, multi-token prediction, mHC, compressed sparse attention |
-| C04 | [Qwen](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C04%20-%20Qwen.ipynb) | Qwen3.5 hybrid architecture — Gated DeltaNet linear attention, gated attention, partial RoPE, KV-cache and latency cost, YaRN |
+| 01 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/01%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head attention, Flash and sliding-window/sparse attention |
+| 02 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/02%20-%20Transformer.ipynb) | Full transformer architecture from scratch — masking, positional encoding, multi-head attention, encoder-decoder |
+| 03 | [BERT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/03%20-%20BERT.ipynb) | Bidirectional encoder — WordPiece tokenization, MLM, NSP, and the fine-tuning paradigm |
+| 04 | [ColBERT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/04%20-%20ColBERT.ipynb) | Late interaction retrieval — MaxSim scoring, query augmentation, token-level matching |
+| 05 | [GPT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/05%20-%20GPT.ipynb) | GPT-2 from scratch — byte-level BPE tokenization, causal self-attention, autoregressive decoding, looped transformers |
+| 06 | [LLaMA](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/06%20-%20LLaMA.ipynb) | LLaMA architecture deep dive — RMSNorm, RoPE, SwiGLU, grouped-query attention |
+| 07 | [DeepSeek](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/07%20-%20DeepSeek.ipynb) | Multi-head Latent Attention (MLA), fine-grained MoE with shared experts, multi-token prediction, mHC, compressed sparse attention |
+| 08 | [Qwen](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/08%20-%20Qwen.ipynb) | Qwen3.5 hybrid architecture — Gated DeltaNet linear attention, gated attention, partial RoPE, KV-cache and latency cost, YaRN |
 
 #### Text Retrieval & NLP
 
@@ -101,15 +101,16 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM%20Prompting.ipynb) | Prompt design patterns, few-shot, CoT on instruction vs reasoning models, reasoning effort, structured output, prompt injection defenses |
-| A02 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Agent%20Harness.ipynb) | The agent loop from scratch — tool system, planning, subagents, skills, context compaction, task system, agent teams |
-| A03 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, prompt caching, model routing, agent testing |
-| A04 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve themselves — Reflexion, GEPA evolutionary prompt optimization, skill evolution with constraint gates, ADAS |
-| A05 | [AI Agent Memory](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20AI%20Agent%20Memory.ipynb) | Memory architectures — Mem0 KV store, MemGPT/Letta tiers, Zep temporal knowledge graphs, hybrid retrieval, consolidation, procedural memory |
-| B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20LangGraph%20Agent.ipynb) | Cyclic state graphs with LangGraph — ReAct, plan-and-execute, memory, multi-agent supervisors, MCP, LangSmith tracing |
-| B02 | [Code Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Code%20Agent.ipynb) | Multi-agent repository auditing — code knowledge graphs, structural detectors, inter-procedural data flow, LLM validators |
-| B03 | [Agent Frameworks and Interop Protocols](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B03%20-%20Agent%20Frameworks%20and%20Interop%20Protocols.ipynb) | One text-to-SQL task on a from-scratch loop, the OpenAI Agents SDK and Google ADK over a shared MCP server — token cost model, agents-as-tools vs workflow pipelines, tool-call guardrails, A2A delegation across frameworks |
-| B04 | [Deep Research Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B04%20-%20Deep%20Research%20Agent.ipynb) | One research loop from scratch — decide next query, search, read, evidence notes with verified quotes, cited answer, citation precision; closed-book vs single search vs research loop on FRAMES |
+| 01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/01%20-%20LLM%20Prompting.ipynb) | Prompt design patterns, few-shot, CoT on instruction vs reasoning models, reasoning effort, structured output, prompt injection defenses |
+| 02 | [Prompt Optimization](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/02%20-%20Prompt%20Optimization.ipynb) | Automatic prompt optimisation of a multi-hop retrieval QA agent — OPRO, MIPROv2 (bootstrapped demos, TPE search), GEPA reflective evolution with Pareto selection, held-out comparison |
+| 03 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/03%20-%20Agent%20Harness.ipynb) | The agent loop from scratch — tool system, planning, subagents, skills, context compaction, task system, agent teams |
+| 04 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/04%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, prompt caching, model routing, agent testing |
+| 05 | [AI Agent Memory](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/05%20-%20AI%20Agent%20Memory.ipynb) | Memory architectures — Mem0 KV store, MemGPT/Letta tiers, Zep temporal knowledge graphs, hybrid retrieval, consolidation, procedural memory |
+| 06 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/06%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve from feedback on BIRD text-to-SQL — Reflexion, ReasoningBank strategy memory, ACE context engineering (delta updates vs full rewrite), constraint gates on self-modification |
+| 07 | [Agent Frameworks and Interop Protocols](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/07%20-%20A2A%20Protocols.ipynb) | One text-to-SQL task on a from-scratch loop, the OpenAI Agents SDK and Google ADK over a shared MCP server — token cost model, agents-as-tools vs workflow pipelines, tool-call guardrails, A2A delegation across frameworks |
+| 08 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/08%20-%20LangGraph%20Agent.ipynb) | Cyclic state graphs with LangGraph — ReAct, plan-and-execute, memory, multi-agent supervisors, MCP, LangSmith tracing |
+| 09 | [Code Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/09%20-%20Code%20Agent.ipynb) | Multi-agent repository auditing — code knowledge graphs, structural detectors, inter-procedural data flow, LLM validators |
+| 10 | [Deep Research Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/10%20-%20Deep%20Research%20Agent.ipynb) | One research loop from scratch — decide next query, search, read, evidence notes with verified quotes, cited answer, citation precision; closed-book vs single search vs research loop on FRAMES |
 
 #### Production & Inference
 
@@ -165,11 +166,11 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 | 04 | [Visual Document Retrieval](05%20-%20Multi-Modal/04%20-%20Visual%20Document%20Retrieval.ipynb) | ColQwen2 late interaction over page images vs OCR + BM25 and single-vector baselines on ViDoRe InfoVQA; MaxSim, nDCG, index compression, answering from the retrieved page |
 | 05 | [Audio & Speech](05%20-%20Multi-Modal/05%20-%20Audio%20%26%20Speech.ipynb) | Whisper log-mel front end, WER and Mimi residual VQ from scratch; Whisper-turbo ASR on LibriSpeech; codec bitrate vs intelligibility |
 | 06 | [Video](05%20-%20Multi-Modal/06%20-%20Video.ipynb) | Qwen3-VL video path — frame sampling, tubelets, token budget and text timestamps; MVBench action antonym with frames in order, reversed and single |
-| 07 | [Video Generation](05%20-%20Multi-Modal/07%20-%20Video%20Generation.ipynb) | *Placeholder* — causal 3D VAE, video DiT with flow matching, autoregressive and self-forcing video diffusion, Wan / Veo / Sora |
+| 07 | [Video Generation](05%20-%20Multi-Modal/07%20-%20Video%20Generation%20%5BTODO%5D.ipynb) | *Placeholder* — causal 3D VAE, video DiT with flow matching, autoregressive and self-forcing video diffusion, Wan / Veo / Sora |
 | 08 | [Native Multimodal](05%20-%20Multi-Modal/08%20-%20Native%20Multimodal.ipynb) | Janus-Pro understanding and generation in one model — VQ quantisation and straight-through from scratch, classifier-free-guided image-token sampler, decoupled reading path |
 | 09 | [Diffusion Language Models](05%20-%20Multi-Modal/09%20-%20Diffusion%20Language%20Models.ipynb) | MDLM loss, confidence-ranked sampler and block diffusion with an exact KV cache from scratch on 0.6B dLLM checkpoints vs AR Qwen3-0.6B on GSM8K; parallel decoding, infilling |
 | 10 | [Computer Use and Browser Agents](05%20-%20Multi-Modal/10%20-%20Computer%20Use%20and%20Browser%20Agents.ipynb) | Qwen3-VL-2B screen grounding on ScreenSpot-v2, typed action space and observe-act loop in headless Chromium on MiniWoB++, DOM + Set-of-Mark agent, prompt injection |
-| 11 | [Vision-Language-Action Models](05%20-%20Multi-Modal/11%20-%20Vision-Language-Action%20Models.ipynb) | *Placeholder* — action chunking, FAST tokenization, flow-matching action experts (π0 family, GR00T), Gemini Robotics, SmolVLA |
+| 11 | [Vision-Language-Action Models](05%20-%20Multi-Modal/11%20-%20Vision-Language-Action%20Models%20%5BTODO%5D.ipynb) | *Placeholder* — action chunking, FAST tokenization, flow-matching action experts (π0 family, GR00T), Gemini Robotics, SmolVLA |
 | 12 | [World Models](05%20-%20Multi-Modal/12%20-%20World%20Models.ipynb) | Frozen V-JEPA 2 encoder, action-conditioned predictor trained on SO-100 robot episodes, CEM planning toward goal images in embedding space |
 
 ---
