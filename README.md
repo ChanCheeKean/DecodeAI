@@ -142,35 +142,35 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [CNN Foundations](04%20-%20Computer%20Vision/01%20-%20CNN%20Foundations.ipynb) | Convolutions from scratch in NumPy — zero-padding, forward/backward pass, pooling, and gradient derivations |
-| 02 | [Object Detection](04%20-%20Computer%20Vision/02%20-%20Object%20Detection.ipynb) | IoU, NMS, anchor box assignment, and YOLO output decoding from scratch; YOLO26's NMS-free one-to-one head vs NMS on the same image |
-| 03 | [Image Segmentation](04%20-%20Computer%20Vision/03%20-%20Image%20Segmentation.ipynb) | U-Net encoder/decoder from scratch — skip connections, pixel-wise loss, SegFormer inference |
-| 04 | [Open-Vocabulary Detection and Segmentation](04%20-%20Computer%20Vision/04%20-%20Open-Vocabulary%20Detection%20and%20Segmentation.ipynb) | *Placeholder* — SAM 3 promptable concept segmentation, Grounding DINO, YOLO-World/YOLOE, RF-DETR, DEIM, YOLO26 |
-| 05 | [Metric Learning](04%20-%20Computer%20Vision/05%20-%20Metric%20Learning.ipynb) | Siamese networks, contrastive loss, triplet loss, and FaceNet — embedding spaces for unseen classes |
-| 06 | [Vision Transformers](04%20-%20Computer%20Vision/06%20-%20Vision%20Transformers.ipynb) | Patch embedding, ViT on MNIST, resolution interpolation; transfer learning from pretrained ViT-B/16 (linear probe, head-only, layer-wise LR decay fine-tuning); DeiT and Swin |
-| 07 | [Contrastive Learning](04%20-%20Computer%20Vision/07%20-%20Contrastive%20Learning.ipynb) | SimCLR, DINOv2, and CLIP vs SigLIP — self-supervised and image-text contrastive pretraining |
-| 08 | [Vision Foundation Encoders](04%20-%20Computer%20Vision/08%20-%20Vision%20Foundation%20Encoders.ipynb) | *Placeholder* — DINOv3 Gram anchoring, SigLIP 2, Perception Encoder, RADIO; dense vs global features |
-| 09 | [Diffusion Model](04%20-%20Computer%20Vision/09%20-%20Diffusion%20Model.ipynb) | DDPM, DDIM, Stable Diffusion — forward/reverse process, noise schedules, ContextUNet |
-| 10 | [Flow Matching and Diffusion Transformers](04%20-%20Computer%20Vision/10%20-%20Flow%20Matching%20and%20Diffusion%20Transformers.ipynb) | *Placeholder* — rectified flow, DiT / MM-DiT, SD3, FLUX.2, few-step distillation |
-| 11 | [3D Vision](04%20-%20Computer%20Vision/11%20-%203D%20Vision.ipynb) | *Placeholder* — feed-forward reconstruction with VGGT and DUSt3R, Gaussian splatting |
-| 12 | [Model Explainability](04%20-%20Computer%20Vision/12%20-%20Model%20Explainability.ipynb) | Saliency maps, GradCAM, Integrated Gradients, and SHAP on ResNet-50 |
+| 01 | [CNN Foundations](04%20-%20Computer%20Vision/01%20-%20CNN%20Foundations.ipynb) | Convolution, pooling and their backward passes from scratch in NumPy, checked against `F.conv2d`, pooling and autograd; a NumPy CNN trained on handwritten digits |
+| 02 | [Object Detection](04%20-%20Computer%20Vision/02%20-%20Object%20Detection.ipynb) | IoU, NMS and per-class NMS from scratch (checked against torchvision), anchor-free grid decoding on YOLO26's raw outputs, one-to-many + NMS vs the NMS-free one-to-one head |
+| 03 | [Image Segmentation](04%20-%20Computer%20Vision/03%20-%20Image%20Segmentation.ipynb) | U-Net from scratch on ADE20K scenes with and without skip connections, mIoU from a confusion matrix, SegFormer-B0's all-MLP decoder rebuilt from its weights |
+| 04 | [Open-Vocabulary Detection and Segmentation](04%20-%20Computer%20Vision/04%20-%20Open-Vocabulary%20Detection%20and%20Segmentation.ipynb) | OWLv2 region–text scoring and SAM 3 presence-weighted concept segmentation on LVIS rare categories; Hungarian matching, federated AP, presence head and NMS ablations |
+| 05 | [Metric Learning](04%20-%20Computer%20Vision/05%20-%20Metric%20Learning.ipynb) | Contrastive, triplet (batch-all, batch-hard, random) and ArcFace losses from scratch; Recall@K on CIFAR-100 classes unseen in training; batch-hard collapse |
+| 06 | [Vision Transformers](04%20-%20Computer%20Vision/06%20-%20Vision%20Transformers.ipynb) | Patch embedding, CLS and position-embedding interpolation from scratch; tiny ViT from scratch vs pretrained ViT-B/16 (probe, head-only, layer-wise LR decay) on Beans; Swin windows and stages |
+| 07 | [Contrastive Learning](04%20-%20Computer%20Vision/07%20-%20Contrastive%20Learning.ipynb) | NT-Xent, CLIP and SigLIP losses from scratch (checked against transformers); SimCLR on CIFAR-10 with GPU augmentations; CLIP vs SigLIP 2 retrieval, batch-size dependence and calibrated probabilities on Flickr8k |
+| 08 | [Vision Foundation Encoders](04%20-%20Computer%20Vision/08%20-%20Vision%20Foundation%20Encoders.ipynb) | DINOv3, SigLIP 2 and PE-Core under identical k-NN and dense probes; DINO self-distillation and Gram anchoring from scratch |
+| 09 | [Diffusion Model](04%20-%20Computer%20Vision/09%20-%20Diffusion%20Model.ipynb) | Forward process, DDPM and DDIM steps from scratch (checked against diffusers); class-conditional DDPM on MNIST; step count vs quality on the released DDPM CIFAR-10 model |
+| 10 | [Flow Matching and Diffusion Transformers](04%20-%20Computer%20Vision/10%20-%20Flow%20Matching%20and%20Diffusion%20Transformers.ipynb) | Rectified-flow loss, logit-normal timesteps, adaLN-Zero DiT, Euler/Heun samplers and CFG from scratch; DiT trained on FLUX.2 VAE latents of AFHQ, FD in DINOv2 space |
+| 11 | [3D Vision](04%20-%20Computer%20Vision/11%20-%203D%20Vision.ipynb) | VGGT-1B feed-forward reconstruction on TUM RGB-D: camera decoding, unprojection, Umeyama alignment and confidence-weighted loss from scratch; classical two-view baseline |
+| 12 | [Model Explainability](04%20-%20Computer%20Vision/12%20-%20Model%20Explainability.ipynb) | Saliency, Grad-CAM, Grad-CAM++, Integrated Gradients and occlusion from scratch on ResNet-50 (checked against Captum); deletion/insertion faithfulness and the weight-randomisation sanity check |
 
 ### 05 - Multi-Modal
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [Vision Language Model](05%20-%20Multi-Modal/01%20-%20Vision%20Language%20Model.ipynb) | Qwen3-VL taken apart and rebuilt — processor, 2×2 patch merger, token insertion, interleaved mRoPE, DeepStack ablation; LLaVA MLP vs patch merger vs Q-Former bridges trained on SigLIP 2 + Qwen3 |
-| 02 | [Instruction Tuning](05%20-%20Multi-Modal/02%20-%20Instruction%20Tuning.ipynb) | Stage 2 on a pretrained VLM — SmolVLM + ChartQA LoRA SFT, multimodal loss masking, resolution vs. visual token budget, grounding diagnostics |
-| 03 | [Reasoning & Inference](05%20-%20Multi-Modal/03%20-%20Reasoning%20%26%20Inference.ipynb) | Reasoning effort on chart questions (which inputs need to think), visual grounding with boxes as output on RefCOCO |
-| 04 | [Visual Document Retrieval](05%20-%20Multi-Modal/04%20-%20Visual%20Document%20Retrieval.ipynb) | *Placeholder* — ColPali / ColQwen late interaction over page images, MaxSim, ViDoRe, multi-vector compression |
-| 05 | [Audio & Speech](05%20-%20Multi-Modal/05%20-%20Audio%20%26%20Speech.ipynb) | Whisper log-mel features and WER from scratch, Mimi residual VQ and bitrate vs quality, full-duplex token streams, Qwen2.5-Omni thinker–talker speech-to-speech |
-| 06 | [Video](05%20-%20Multi-Modal/06%20-%20Video.ipynb) | Qwen3-VL video path — fps sampling, temporal patches, text timestamps, token counts; MVBench with one vs many frames and reversed frame order |
+| 01 | [Vision Language Model](05%20-%20Multi-Modal/01%20-%20Vision%20Language%20Model.ipynb) | Frozen SigLIP 2 + Qwen2.5-0.5B: visual-token splicing, MLP, pixel-shuffle and Perceiver bridges trained on Flickr8k; pixel shuffle checked against SmolVLM, mRoPE ids against Qwen3-VL |
+| 02 | [Instruction Tuning](05%20-%20Multi-Modal/02%20-%20Instruction%20Tuning.ipynb) | Stage 2 on a pretrained VLM — SmolVLM + ChartQA LoRA SFT, processor and image-placeholder contract, multimodal loss masking, resolution vs visual token budget |
+| 03 | [Reasoning & Inference](05%20-%20Multi-Modal/03%20-%20Reasoning%20%26%20Inference.ipynb) | Reasoning effort on chart questions (which inputs need to think); RefCOCO grounding with boxes as text, grounding-tuned Qwen3-VL-2B vs gpt-5-mini |
+| 04 | [Visual Document Retrieval](05%20-%20Multi-Modal/04%20-%20Visual%20Document%20Retrieval.ipynb) | ColQwen2 late interaction over page images vs OCR + BM25 and single-vector baselines on ViDoRe InfoVQA; MaxSim, nDCG, index compression, answering from the retrieved page |
+| 05 | [Audio & Speech](05%20-%20Multi-Modal/05%20-%20Audio%20%26%20Speech.ipynb) | Whisper log-mel front end, WER and Mimi residual VQ from scratch; Whisper-turbo ASR on LibriSpeech; codec bitrate vs intelligibility |
+| 06 | [Video](05%20-%20Multi-Modal/06%20-%20Video.ipynb) | Qwen3-VL video path — frame sampling, tubelets, token budget and text timestamps; MVBench action antonym with frames in order, reversed and single |
 | 07 | [Video Generation](05%20-%20Multi-Modal/07%20-%20Video%20Generation.ipynb) | *Placeholder* — causal 3D VAE, video DiT with flow matching, autoregressive and self-forcing video diffusion, Wan / Veo / Sora |
-| 08 | [Native Multimodal](05%20-%20Multi-Modal/08%20-%20Native%20Multimodal.ipynb) | Janus-Pro understanding and generation in one model — VQ tokenizer from scratch, decoupled image paths, classifier-free guidance sampling loop |
-| 09 | [Diffusion Language Models](05%20-%20Multi-Modal/09%20-%20Diffusion%20Language%20Models.ipynb) | *Placeholder* — masked discrete diffusion (LLaDA, Dream), Mercury, Gemini Diffusion, block diffusion, parallel decoding |
-| 10 | [Computer Use and Browser Agents](05%20-%20Multi-Modal/10%20-%20Computer%20Use%20and%20Browser%20Agents.ipynb) | *Placeholder* — screenshot and DOM agents, grounding, action spaces, browser automation, evaluation, safety |
+| 08 | [Native Multimodal](05%20-%20Multi-Modal/08%20-%20Native%20Multimodal.ipynb) | Janus-Pro understanding and generation in one model — VQ quantisation and straight-through from scratch, classifier-free-guided image-token sampler, decoupled reading path |
+| 09 | [Diffusion Language Models](05%20-%20Multi-Modal/09%20-%20Diffusion%20Language%20Models.ipynb) | MDLM loss, confidence-ranked sampler and block diffusion with an exact KV cache from scratch on 0.6B dLLM checkpoints vs AR Qwen3-0.6B on GSM8K; parallel decoding, infilling |
+| 10 | [Computer Use and Browser Agents](05%20-%20Multi-Modal/10%20-%20Computer%20Use%20and%20Browser%20Agents.ipynb) | Qwen3-VL-2B screen grounding on ScreenSpot-v2, typed action space and observe-act loop in headless Chromium on MiniWoB++, DOM + Set-of-Mark agent, prompt injection |
 | 11 | [Vision-Language-Action Models](05%20-%20Multi-Modal/11%20-%20Vision-Language-Action%20Models.ipynb) | *Placeholder* — action chunking, FAST tokenization, flow-matching action experts (π0 family, GR00T), Gemini Robotics, SmolVLA |
-| 12 | [World Models](05%20-%20Multi-Modal/12%20-%20World%20Models.ipynb) | *Placeholder* — Genie 3 interactive worlds, V-JEPA 2 planning in embedding space, Cosmos, latent dynamics |
+| 12 | [World Models](05%20-%20Multi-Modal/12%20-%20World%20Models.ipynb) | Frozen V-JEPA 2 encoder, action-conditioned predictor trained on SO-100 robot episodes, CEM planning toward goal images in embedding space |
 
 ---
 
