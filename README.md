@@ -12,18 +12,6 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 ## Table of Contents
 
-### 00 - Coding Prep
-
-| # | Notebook | Description |
-|---|----------|-------------|
-| 01 | [LeetCode Playbook](00%20-%20Coding%20Prep/01%20-%20LeetCode%20Playbook.ipynb) | Study method, 12-week roadmap, complexity budget, Python toolkit, pattern recognition table, runnable templates and a 428-question checklist |
-| 02 | [Arrays and Strings](00%20-%20Coding%20Prep/02%20-%20Arrays%20and%20Strings.ipynb) | Hashing, two pointers, sliding window, prefix sums, matrix and string problems (92 questions) |
-| 03 | [Stack, Binary Search, Linked List](00%20-%20Coding%20Prep/03%20-%20Stack,%20Binary%20Search,%20Linked%20List.ipynb) | Monotonic stack, binary search on the answer, slow/fast pointers, LRU/LFU caches (79 questions) |
-| 04 | [Trees, Tries and Heaps](00%20-%20Coding%20Prep/04%20-%20Trees,%20Tries%20and%20Heaps.ipynb) | Tree DFS/BFS, BST, tries, top-k, two heaps and k-way merge (72 questions) |
-| 05 | [Graphs and Backtracking](00%20-%20Coding%20Prep/05%20-%20Graphs%20and%20Backtracking.ipynb) | Grid BFS/DFS, topological sort, union-find, Dijkstra, MST, backtracking (62 questions) |
-| 06 | [Dynamic Programming](00%20-%20Coding%20Prep/06%20-%20Dynamic%20Programming.ipynb) | 1D, knapsack, state machine, grid, string and interval DP (61 questions) |
-| 07 | [Greedy, Intervals, Math and Design](00%20-%20Coding%20Prep/07%20-%20Greedy,%20Intervals,%20Math%20and%20Design.ipynb) | Greedy, interval scheduling, math, bit manipulation and class design (62 questions) |
-
 ### 01 - Machine Learning
 
 | # | Notebook | Description |
