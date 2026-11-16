@@ -138,3 +138,6 @@ dmypy.json
 .deepeval/
 chroma_db/
 03 - Large Language Model/*/data/
+
+# Private study notes
+00 - Coding Prep/00 - FDE Priority List*
